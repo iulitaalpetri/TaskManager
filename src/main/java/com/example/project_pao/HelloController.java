@@ -1,5 +1,7 @@
 package com.example.project_pao;
 
+import com.example.project_pao.classes.CurrentUser;
+import com.example.project_pao.db.DbFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,21 +14,21 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.example.project_pao.db.DbFunctions.*;
+
 public class HelloController {
-    AppUser user = null;
+    
 
     @FXML
     private Label welcomeText;
     @FXML
     private TextField UsernameTextField;
-
-    @FXML
-    private Button exitButton;
-
-
-
     @FXML
     private PasswordField PasswordTextField;
+    @FXML
+    private Button exitButton;
+    @FXML
+    private Label LoginLabel;
 
 
 
@@ -38,11 +40,39 @@ public class HelloController {
 
     @FXML
     protected void onLoginButtonClick() throws Exception {
+        LoginLabel.setText("");
+        //verify if the fields are not empty
+        if(UsernameTextField.getText().isBlank() || PasswordTextField.getText().isBlank())
+        { LoginLabel.setText("Please enter a username and a passowrd");
+            return;}
+        else LoginLabel.setText("");
+
+
         String username = UsernameTextField.getText();
         String password = PasswordTextField.getText();
-        user = Authentification.login();
 
-    }
+        if(DbFunctions.checkPasswordUsername(username,password)){
+
+            LoginLabel.setText("Login successful!");
+            com.example.project_pao.classes.AppUser user= returnUser(username,password);
+            CurrentUser.loggedUser = user;
+        }
+        else LoginLabel.setText("Wrong username or password");
+
+
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile_page.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 555, 425);
+            Stage stage = new Stage();
+            stage.setTitle("Profile Page");
+            stage.setScene(scene);
+            stage.show();
+
+
+        }
+
+
+
 
     public void ExitButtonAction(ActionEvent actionEvent) {
         System.exit(0);
