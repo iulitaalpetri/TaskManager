@@ -53,15 +53,16 @@ public class HelloController {
 
         if(DbFunctions.checkPasswordUsername(username,password)){
 
+            DbFunctions.login(username,password);
+            System.out.println(CurrentUser.getLoggedUser().getUsername()+ " " + CurrentUser.getLoggedUser().getPassword()+ " " + CurrentUser.getLoggedUser().getEmail());
             LoginLabel.setText("Login successful!");
-            com.example.project_pao.classes.AppUser user= returnUser(username,password);
-            CurrentUser.loggedUser = user;
+
         }
         else LoginLabel.setText("Wrong username or password");
 
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile_page.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profilePage.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 555, 425);
             Stage stage = new Stage();
             stage.setTitle("Profile Page");
@@ -80,7 +81,7 @@ public class HelloController {
 
     public void CreateAnAccountButtononAction(ActionEvent actionEvent) throws IOException {
         //open create_account.fxml when the CreateAnAccount button is pressed without exit button
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("create_account.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("createAccount.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 555, 425);
         Stage stage = new Stage();
         stage.setTitle("Hello!");

@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
         DbFunctions db=new DbFunctions();
         Connection conn=db.connect_to_db("Task Manager","postgres","anarepere");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource( "hello-view.fxml" ));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource( "login.fxml" ));
         Scene scene = new Scene(fxmlLoader.load(), 555, 425);
         stage.setTitle("Hello!");
         stage.setScene(scene);

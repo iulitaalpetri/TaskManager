@@ -27,6 +27,11 @@ public class Workspace {
         return name;
     }
 
+    //get projecy
+    public Project getProject() {
+        return idproject;
+    }
+
 
 
     public List<AppUser> getMembers() {

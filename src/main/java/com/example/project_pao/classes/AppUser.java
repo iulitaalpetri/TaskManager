@@ -22,7 +22,18 @@ public class AppUser {
         this.email = email;
     }
 
-//getters
+    public AppUser(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+
+        this.email = email;
+    }
+
+    public AppUser() {
+
+    }
+
+    //getters
 public int getId() {
     return id;
 }
@@ -33,6 +44,11 @@ public String getUsername() {
 
 public String getPassword() {
     return password;
+}
+
+//get porjects
+public List<Project> getProjects() {
+    return projects;
 }
 
 public String getEmail() {
@@ -83,6 +99,14 @@ public void setEmail(String email) {
 
 
         return outputString;
+    }
+
+    public void addProject(Project project){
+        projects.add(project);
+    }
+
+    public  void addWorkspace(Workspace workspace){
+        workspaces.add(workspace);
     }
 
 }

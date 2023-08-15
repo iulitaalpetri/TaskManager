@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="532.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project_pao.CreateAccountController">
+    <left>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #191E76; -fx-border-color: black;" BorderPane.alignment="CENTER">
+            <children>
+                <Circle fill="#191e76" layoutX="100.0" layoutY="211.0" radius="93.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.2" />
+                <Line endX="140.0" layoutX="38.0" layoutY="227.0" startX="-15.83332347869873" stroke="WHITE" />
+                <Label alignment="BASELINE_CENTER" layoutX="50.0" layoutY="167.0" prefHeight="61.0" prefWidth="101.0" text="Nume" textFill="WHITE">
+                    <font>
+                        <Font name="Georgia" size="36.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="400.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button id="createaccountbutton" layoutX="46.0" layoutY="307.0" mnemonicParsing="false" onAction="#CreateAccountOnAction" prefHeight="33.0" prefWidth="219.0" text="Create account" />
+                <Label layoutX="83.0" layoutY="51.0" prefHeight="25.0" prefWidth="182.0" text="Create account">
+                    <font>
+                        <Font name="Georgia Bold" size="23.0" />
+                    </font>
+                </Label>
+                <Label layoutX="24.0" layoutY="119.0" text="Username">
+                    <font>
+                        <Font name="Georgia" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="25.0" layoutY="155.0" text="Email">
+                    <font>
+                        <Font name="Georgia" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="26.0" layoutY="235.0" text="Confirm Password">
+                    <font>
+                        <Font name="Georgia" size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="25.0" layoutY="194.0" text="Password">
+                    <font>
+                        <Font name="Georgia" size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="createusername" layoutX="155.0" layoutY="117.0" promptText="Username" />
+                <TextField fx:id="createemail" layoutX="156.0" layoutY="153.0" promptText="Email" />
+                <PasswordField fx:id="createpassword" layoutX="155.0" layoutY="193.0" promptText="Password" text="frefre" />
+                <PasswordField fx:id="createconfirmpassword" layoutX="155.0" layoutY="233.0" promptText="Confirm Password" text="wreqwrq" />
+                <Button fx:id="alreadyhaveaccountbutton" layoutX="47.0" layoutY="347.0" mnemonicParsing="false" onAction="#alreadyhaveaccountbuttonOnAction" prefHeight="33.0" prefWidth="219.0" text="Already have an account? Log in" />
+                <Label fx:id="createAccountMessage" alignment="CENTER" layoutX="61.0" layoutY="269.0" prefHeight="17.0" prefWidth="181.0" />
+                <Label fx:id="createEnterUsername" layoutX="24.0" layoutY="138.0" prefHeight="17.0" prefWidth="133.0" textFill="RED" />
+                <Label fx:id="createEnterEmail" layoutX="24.0" layoutY="176.0" prefHeight="17.0" prefWidth="129.0" textFill="RED" />
+                <Label fx:id="createEnterPassword" layoutX="24.0" layoutY="216.0" prefHeight="17.0" prefWidth="125.0" textFill="RED" />
+                <Label fx:id="createEnterConfirmPassword" layoutX="24.0" layoutY="256.0" prefHeight="17.0" prefWidth="128.0" textFill="RED" />
+                <Label fx:id="createPasswordNotMatch" layoutX="63.0" layoutY="290.0" prefHeight="17.0" prefWidth="183.0" textFill="RED" />
+            </children>
+        </AnchorPane>
+    </right>
+</BorderPane>

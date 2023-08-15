@@ -14,13 +14,20 @@ public class Project {
 
 
     //constructor
-    public Project(int id, String name, String description, String deadline, boolean isworkspace, int owner) {
+    public Project(int id, String name, String description, String deadline, boolean isworkspace) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.deadline = deadline;
         this.isworkspace = isworkspace;
 
+    }
+
+    public Project(String proiect1, String descriere1, String deadline, Boolean isworkspace) {
+        this.name=proiect1;
+        this.description=descriere1;
+        this.deadline=deadline;
+        this.isworkspace=isworkspace;
     }
 
     //setters
