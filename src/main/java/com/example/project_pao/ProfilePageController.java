@@ -26,6 +26,12 @@ public class ProfilePageController implements Initializable {
     @FXML
     private Button ProfileLogoutButton;
 
+    @FXML
+    private Button seeAllProjectsButton;
+
+    @FXML
+    private Button seeAllWorkspacesButton;
+
     //set the username and email labels automatically when the profile page is onloaded
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -50,13 +56,30 @@ public class ProfilePageController implements Initializable {
 
     }
 
-
-    public void ProfileSeeMyListButtonOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MyList.fxml"));
+    //see all projects button
+    public void seeAllProjectsButtonOnClick(ActionEvent actionEvent) throws IOException {
+        //seeAllProjectsButton.getScene().getWindow().hide();
+        //redirect to see all projects page
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("allProjects.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 555, 425);
         Stage stage = new Stage();
-        stage.setTitle("My List");
+        stage.setTitle("See all projects");
         stage.setScene(scene);
         stage.show();
     }
+
+    //see all workspaces button
+    public void seeAllWorkspacesButtonOnClick(ActionEvent actionEvent) throws IOException {
+        //seeAllWorkspacesButton.getScene().getWindow().hide();
+        //redirect to see all workspaces page
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("allWorkspaces.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 555, 425);
+        Stage stage = new Stage();
+        stage.setTitle("See all workspaces");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+
 }

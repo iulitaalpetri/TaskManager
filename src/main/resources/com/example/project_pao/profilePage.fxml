@@ -13,8 +13,8 @@
     <left>
         <VBox prefHeight="400.0" prefWidth="184.0" style="-fx-background-color: #191E76;" BorderPane.alignment="CENTER">
             <children>
-                <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="193.0" text="See Projects" />
-                <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="187.0" text="See Workspaces" />
+                <Button fx:id="seeAllProjectsButton" mnemonicParsing="false" onAction="#seeAllProjectsButtonOnClick" prefHeight="57.0" prefWidth="193.0" text="See Projects" />
+                <Button fx:id="seeAllWorkspacesButton" mnemonicParsing="false" onAction="#seeAllWorkspacesButtonOnClick" prefHeight="58.0" prefWidth="187.0" text="See Workspaces" />
             </children>
         </VBox>
     </left>
